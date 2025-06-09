@@ -1,5 +1,5 @@
 {
-  "name": "simple-livekit-agent",
+  "name": "mini-livekit-agent-js",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",

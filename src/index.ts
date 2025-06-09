@@ -48,26 +48,6 @@ export default defineAgent({
     const participant = await ctx.waitForParticipant()
     console.log(`starting assistant example agent for ${participant.identity}`)
 
-    const fncCtx: llm.FunctionContext = {
-      weather: {
-        description: '示された場所の天気を取得する',
-        parameters: z.object({
-          location: z.string().describe('The location to get the weather for'),
-        }),
-        execute: async ({ location }) => {
-          console.debug(`executing weather function for ${location}`)
-          const response = await fetch(
-            `https://wttr.in/${location}?format=%C+%t`,
-          )
-          if (!response.ok) {
-            throw new Error(`Weather API returned status: ${response.status}`)
-          }
-          const weather = await response.text()
-          return `現在の「${location}」の天気は「${weather}」です。`
-        },
-      },
-    }
-
     const agent = new pipeline.VoicePipelineAgent(
       vad,
       new deepgram.STT({ language: 'ja' }),
@@ -75,7 +55,6 @@ export default defineAgent({
       new openai.TTS({ apiKey: process.env.OPENAI_API_KEY }),
       {
         chatCtx: initialContext,
-        fncCtx,
       },
     )
     agent.start(ctx.room, participant)
