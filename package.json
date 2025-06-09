@@ -1,0 +1,36 @@
+{
+  "name": "simple-livekit-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npx tsx src/index.ts start",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@livekit/agents": "^0.7.6",
+    "@livekit/agents-plugin-deepgram": "^0.5.6",
+    "@livekit/agents-plugin-livekit": "^0.1.1",
+    "@livekit/agents-plugin-openai": "^0.9.1",
+    "@livekit/agents-plugin-silero": "^0.5.6",
+    "dotenv": "^16.5.0",
+    "zod": "^3.25.56"
+  }
+}
