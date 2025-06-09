@@ -4,9 +4,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx tsx src/index.ts start"
   },
   "keywords": [],
   "author": "",
