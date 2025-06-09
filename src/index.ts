@@ -13,7 +13,6 @@ import * as deepgram from '@livekit/agents-plugin-deepgram'
 import * as openai from '@livekit/agents-plugin-openai'
 import * as silero from '@livekit/agents-plugin-silero'
 import { fileURLToPath } from 'node:url'
-import { z } from 'zod'
 
 export default defineAgent({
   prewarm: async (proc: JobProcess) => {
