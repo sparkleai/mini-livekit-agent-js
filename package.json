@@ -4,7 +4,8 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npx tsx src/index.ts start"
+    "start:pipeline": "npx tsx src/pipeline.ts start",
+    "start:realtime": "npx tsx src/realtime.ts start"
   },
   "keywords": [],
   "author": "",
